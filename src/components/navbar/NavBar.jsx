@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import CardWidget from "./CardWidget";
 import "./navbar.css";
 function NavBar(props) {
   useEffect(() => {
@@ -33,9 +34,7 @@ function NavBar(props) {
           <a className="link-item" href="#nav">
             Usuario
           </a>
-          <a className="link-item" href="#nav">
-            Carrito
-          </a>
+          <CardWidget totalItems={10} />
         </div>
       </nav>
       <button id="button-menu" className="button-menu">

@@ -1,13 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import Footer from "./components/footer/Footer";
+import NavBar from "./components/navbar/NavBar.jsx";
+import ItemListContainer from "./components/itemListContainer/ItemListContainer.jsx";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <NavBar />
+    <ItemListContainer msj={"Hola, como estas Bienvenido :)"} />
+    <Footer />
   </React.StrictMode>
 );
 
