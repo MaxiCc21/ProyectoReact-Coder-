@@ -17,9 +17,9 @@ function NavBar(props) {
   }, []);
 
   return (
-    <header className="main-header">
+    <header id="nav" className="main-header">
       <strong className="main-logo">Roof</strong>
-      <nav id="nav" className="main-nav">
+      <nav className="main-nav">
         <div className="nav-links">
           <a className="link-item" href="#nav">
             Ropa
@@ -32,6 +32,9 @@ function NavBar(props) {
           </a>
           <a className="link-item" href="#nav">
             Usuario
+          </a>
+          <a className="link-item" href="#nav">
+            Carrito
           </a>
         </div>
       </nav>
