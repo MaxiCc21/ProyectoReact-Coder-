@@ -2,21 +2,6 @@ import React, { useEffect } from "react";
 import CardWidget from "./CardWidget";
 import "./navbar.css";
 function NavBar(props) {
-  useEffect(() => {
-    const toggleButton = document.getElementById("button-menu");
-    const navWrapper = document.getElementById("nav");
-
-    toggleButton.addEventListener("click", () => {
-      toggleButton.classList.toggle("close");
-      navWrapper.classList.toggle("show");
-    });
-
-    navWrapper.addEventListener("click", (e) => {
-      navWrapper.classList.remove("show");
-      toggleButton.classList.remove("close");
-    });
-  }, []);
-
   return (
     <header id="nav" className="main-header">
       <strong className="main-logo">Roof</strong>
