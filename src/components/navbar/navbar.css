@@ -118,7 +118,8 @@
   display: none;
 }
 
-@media screen and (min-width: 768px) {
+/*! 750px */
+@media screen and (min-width: 200px) {
   .button-menu {
     display: none;
   }
