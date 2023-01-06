@@ -1,0 +1,37 @@
+.shopGallety-container {
+  background-color: red;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shopGallety-container div {
+  background-color: aqua;
+  width: 95%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.shopGallety-container .card {
+  height: 370px;
+  width: 280px;
+  background-color: rgb(235, 192, 0);
+  color: rgb(95, 105, 160);
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+}
+
+.tittle-section h2 {
+  text-align: left;
+  background-color: red;
+  width: 100%;
+}
+
+.img-section {
+  display: flex;
+  align-items: center;
+}

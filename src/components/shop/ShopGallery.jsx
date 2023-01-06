@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import BasicExample from "./Cards/Card.jsx";
+import "./ShopGallery.css";
 
 const ShopGallery = (props) => {
   return (
-    <>
-      <div>Tarjetas</div>
-    </>
+    <section className="shopGallety-container">
+      <div>
+        <BasicExample />
+      </div>
+    </section>
   );
 };
 

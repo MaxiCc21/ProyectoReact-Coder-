@@ -4,7 +4,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/NavBar.jsx";
-import ItemListContainer from "./components/itemListContainer/ItemListContainer.jsx";
+// import ItemListContainer from "./components/itemListContainer/ItemListContainer.jsx";
 import ShopGallery from "./components/shop/ShopGallery";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
