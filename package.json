@@ -1,5 +1,5 @@
 {
-  "name": "sass",
+  "name": "proyecto-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,8 +15,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "sass": "sass -w ./src/sass/style.scss ./src/index.css"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -35,18 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MaxiCc21/ProyectoReact-Coder-.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MaxiCc21/ProyectoReact-Coder-/issues"
-  },
-  "homepage": "https://github.com/MaxiCc21/ProyectoReact-Coder-#readme"
+  }
 }
