@@ -1,10 +1,16 @@
 import React from "react";
 
-const Card = ({ el }) => {
-  let { category, description, image, price, title } = el;
+const Card = ({ el, methodCardWidget }) => {
+  let { id, category, description, image, price, title } = el;
+  let { itemListCard, setItemToCard, deleteItemToCard } = methodCardWidget;
+
+  const createAndAppendNewItem = () => {
+    setItemToCard(el);
+  };
+
   return (
     <div className="box">
-      <a href="#">
+      <a href="#" onClick={createAndAppendNewItem}>
         <img alt="Imagen" src={image} />
         <h1>{title}</h1>
         <h2>{category}</h2>
