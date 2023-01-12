@@ -1,0 +1,19 @@
+.box {
+  background-color: red;
+  width: 200px;
+  height: auto;
+  text-align: center;
+  margin: 50px;
+}
+
+.box img {
+  width: 200px;
+  height: 300px;
+}
+
+.Galery-Container {
+  background-color: aqua;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
