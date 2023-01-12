@@ -1,7 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import CardWidget from "./CardWidget";
 import "./navbar.css";
-function NavBar(props) {
+
+function NavBar({ methodCardWidget }) {
+  let { itemListCard, setItemToCard, deleteItemToCard } = methodCardWidget;
+
   return (
     <header id="nav" className="main-header">
       <strong className="main-logo">Roof</strong>
@@ -19,7 +22,7 @@ function NavBar(props) {
           <a className="link-item" href="#nav">
             Usuario
           </a>
-          <CardWidget totalItems={10} />
+          <CardWidget totalItems={itemListCard.length} />
         </div>
       </nav>
       <button id="button-menu" className="button-menu">
