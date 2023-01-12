@@ -5,13 +5,15 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/NavBar.jsx";
-import ItemListContainer from "./components/itemListContainer/ItemListContainer.jsx";
+import GaleriaApp from "./components/galeria/GaleriaApp";
+// import ItemListContainer from "./components/itemListContainer/ItemListContainer.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <NavBar />
-    <ItemListContainer msj={"Hola, como estas Bienvenido :)"} />
+    <GaleriaApp />
+    {/* <ItemListContainer msj={"Hola, como estas Bienvenido :)"} /> */}
     <Footer />
   </React.StrictMode>
 );
