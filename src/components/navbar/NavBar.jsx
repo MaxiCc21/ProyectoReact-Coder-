@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CardWidget from "./CardWidget";
+import CardWidget from "../CardWidget/CardWidget";
 import "./navbar.css";
 
 function NavBar({ methodCardWidget }) {
@@ -22,6 +22,7 @@ function NavBar({ methodCardWidget }) {
           <a className="link-item" href="#nav">
             Usuario
           </a>
+
           <CardWidget totalItems={itemListCard.length} />
         </div>
       </nav>
