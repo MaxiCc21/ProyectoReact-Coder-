@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import CardWidget from "../CardWidget/CardWidget";
 import "./navbar.css";
 
@@ -8,21 +8,23 @@ function NavBar({ methodCardWidget }) {
 
   return (
     <header id="nav" className="main-header">
-      <strong className="main-logo">Roof</strong>
+      <Link className="main-logo" to="/">
+        Roof
+      </Link>
       <nav className="main-nav">
         <div className="nav-links">
-          <a className="link-item" href="#nav">
+          <Link className="link-item" to="/ropa">
             Ropa
-          </a>
-          <a className="link-item" href="#nav">
+          </Link>
+          <Link className="link-item" to="/ropa">
             Calzado
-          </a>
-          <a className="link-item" href="#nav">
+          </Link>
+          <Link className="link-item" to="/ropa">
             Accesorios
-          </a>
-          <a className="link-item" href="#nav">
+          </Link>
+          <Link className="link-item" to="/ropa">
             Usuario
-          </a>
+          </Link>
 
           <CardWidget totalItems={itemListCard.length} />
         </div>
