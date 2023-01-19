@@ -7,6 +7,8 @@ import NavBar from "./components/navbar/NavBar";
 import Index from "./page/Index";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Page404 from "./page/404/page404";
+import CardModal from "./components/CardWidget/CardModal";
+import { useCard } from "./Hooks/useCard";
 
 function App(props) {
   const [itemListCard, setItemListCard] = useState([]);
@@ -19,7 +21,14 @@ function App(props) {
     setItemListCard([...itemListCard, newItemData]);
   };
 
-  const deleteItemToCard = () => {};
+  const deleteItemToCard = (itemID) => {
+    console.log("Borrar");
+    let isDelete = window.confirm(`¿Seguro que desea eliminar ${itemID}`);
+    if (isDelete) {
+      let resDelete = itemListCard.filter((el) => el.id !== itemID);
+      setItemListCard(resDelete);
+    }
+  };
 
   const methodCardWidget = {
     itemListCard,
@@ -29,7 +38,7 @@ function App(props) {
 
   return (
     <>
-      {/* <GaleriaApp methodCardWidget={methodCardWidget} /> */}
+      <CardModal methodCardWidget={methodCardWidget} />
       <BrowserRouter>
         <NavBar methodCardWidget={methodCardWidget} />
         <Routes>

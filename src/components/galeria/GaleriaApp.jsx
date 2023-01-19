@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "./Card";
 import "./GaleriaApp.css";
 
-export default function GaleriaApp({ methodCardWidget }) {
+export default function GaleriaApp({ methodCardWidget, addItemCardList }) {
   const [db, setDb] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,12 @@ export default function GaleriaApp({ methodCardWidget }) {
   return (
     <div className="Galery-Container">
       {db.map((el) => (
-        <Card key={el.id} el={el} methodCardWidget={methodCardWidget} />
+        <Card
+          key={el.id}
+          el={el}
+          methodCardWidget={methodCardWidget}
+          addItemCardList={addItemCardList}
+        />
       ))}
     </div>
   );
