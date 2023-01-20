@@ -3,25 +3,25 @@ import "./footer.css";
 
 const Footer = (props) => {
   return (
-    <footer class="footer-container">
-      <div class="footer-container-content">
-        <div class="footer-container-socialMedia">
-          <a class="btn-footer" href="#index">
-            <i class="fa-brands fa-facebook-f"></i>
+    <footer className="footer-container">
+      <div className="footer-container-content">
+        <div className="footer-container-socialMedia">
+          <a className="btn-footer" href="#index">
+            <i className="fa-brands fa-facebook-f"></i>
           </a>
-          <a class="btn-footer" href="#index">
-            <i class="fa-brands fa-twitter"></i>
+          <a className="btn-footer" href="#index">
+            <i className="fa-brands fa-twitter"></i>
           </a>
-          <a class="btn-footer" href="#index">
-            <i class="fa-brands fa-instagram"></i>
+          <a className="btn-footer" href="#index">
+            <i className="fa-brands fa-instagram"></i>
           </a>
-          <a class="btn-footer" href="#index">
-            <i class="fa-brands fa-whatsapp"></i>
+          <a className="btn-footer" href="#index">
+            <i className="fa-brands fa-whatsapp"></i>
           </a>
         </div>
 
-        <div class="footer-content-others">
-          <div class="others-box">
+        <div className="footer-content-others">
+          <div className="others-box">
             <h5>Productos</h5>
             <ul>
               <li>
@@ -41,7 +41,7 @@ const Footer = (props) => {
               </li>
             </ul>
           </div>
-          <div class="others-box">
+          <div className="others-box">
             <h5>Asistencia</h5>
             <ul>
               <li>
@@ -61,7 +61,7 @@ const Footer = (props) => {
               </li>
             </ul>
           </div>
-          <div class="others-box">
+          <div className="others-box">
             <h5>
               Informacion <br />
               de la empresa
