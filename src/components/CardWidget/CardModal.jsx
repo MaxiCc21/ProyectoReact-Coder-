@@ -3,9 +3,10 @@ import withReactContent from "sweetalert2-react-content";
 import React, { useState, useEffect } from "react";
 
 const CardModal = ({ methodCardWidget }) => {
+  let { itemListCard, deleteItemToCard } = methodCardWidget;
   return (
     <>
-      {methodCardWidget.itemListCard.map((el) => (
+      {itemListCard.map((el) => (
         <>
           <div>
             <img
@@ -16,7 +17,7 @@ const CardModal = ({ methodCardWidget }) => {
             <h1>{el.title}</h1>
             <button
               onClick={() => {
-                methodCardWidget.deleteItemToCard(el.id);
+                deleteItemToCard(el.id);
               }}
             >
               X

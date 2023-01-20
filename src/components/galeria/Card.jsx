@@ -1,8 +1,8 @@
 import React from "react";
 
-const Card = ({ el, methodCardWidget, addItemCardList }) => {
+const Card = ({ el, methodCardWidget }) => {
   let { id, category, description, image, price, title } = el;
-  let { itemListCard, setItemToCard, deleteItemToCard } = methodCardWidget;
+  let { setItemToCard } = methodCardWidget;
 
   const createAndAppendNewItem = () => {
     setItemToCard(el);

@@ -4,7 +4,7 @@ import CardWidget from "../CardWidget/CardWidget";
 import "./navbar.css";
 
 function NavBar({ methodCardWidget }) {
-  let { itemListCard, setItemToCard, deleteItemToCard } = methodCardWidget;
+  let { itemListCard } = methodCardWidget;
 
   return (
     <header id="nav" className="main-header">
