@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const useCard = (props) => {
-  const [CardList, setCardList] = useState([]);
+  const [itemListCard, setItemListCard] = useState([]);
 
-  const addItemCardList = (item) => {
-    setCardList([...CardList, item]);
-    console.log("Nuevo item agregado", CardList);
+  const setItemToCard = (newItemData) => {
+    setItemListCard([...itemListCard, newItemData]);
   };
 
-  const deleteItemCardList = (idItem) => {
-    let isDelete = window.confirm(`¿Seguro que desea eliminar ${idItem}`);
+  const deleteItemToCard = (itemID) => {
+    console.log("Borrar");
+    let isDelete = window.confirm(`¿Seguro que desea eliminar ${itemID}`);
     if (isDelete) {
-      let resDelete = CardList.filter((el) => el.id !== idItem);
-      setCardList(resDelete);
+      let resDelete = itemListCard.filter((el) => el.id !== itemID);
+      setItemListCard(resDelete);
     }
   };
 
-  return {
-    CardList,
-    addItemCardList,
-    deleteItemCardList,
-  };
+  return { itemListCard, setItemToCard, deleteItemToCard };
 };

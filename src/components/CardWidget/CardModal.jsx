@@ -3,7 +3,6 @@ import withReactContent from "sweetalert2-react-content";
 import React, { useState, useEffect } from "react";
 
 const CardModal = ({ methodCardWidget }) => {
-  console.log("rojo", methodCardWidget.itemListCard);
   return (
     <>
       {methodCardWidget.itemListCard.map((el) => (
