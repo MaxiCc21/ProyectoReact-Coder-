@@ -10,7 +10,7 @@ const Card = ({ el, methodCardWidget, addItemCardList }) => {
 
   return (
     <div className="box">
-      <a href="#ss" onClick={createAndAppendNewItem}>
+      <a href="#" onClick={createAndAppendNewItem}>
         <img alt="Imagen" src={image} />
         <h1>{title}</h1>
         <h2>{category}</h2>
