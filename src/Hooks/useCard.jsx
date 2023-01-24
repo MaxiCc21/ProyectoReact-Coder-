@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
@@ -21,7 +21,9 @@ export const useCard = (props) => {
     const MySwal = withReactContent(Swal);
     const res = await MySwal.fire({
       title: "Seguro que desea eliminar este producto?",
+      showConfirmButton: false,
       showDenyButton: true,
+      showCancelButton: true,
       denyButtonText: "Eliminar",
     });
 
@@ -30,21 +32,21 @@ export const useCard = (props) => {
 
   const setItemToCard = (item) => {
     setItemListCard([...itemListCard, item]);
+    console.log(item.price);
     setTotalPrice(totalPrice + item.price);
   };
 
   const deleteItemToCard = async (item) => {
-    console.log("Borrar");
     let isDelete = await sweetalert2();
-    console.log("respuesta", isDelete);
-    if (isDelete) {
+
+    if (!isDelete) {
       Toast.fire({
         icon: "success",
         title: "Producto elminiado",
       });
       let resDelete = itemListCard.filter((el) => el.id !== item.id);
       setItemListCard(resDelete);
-      setTotalPrice(totalPrice - item.price);
+      setTotalPrice(totalPrice > 0 ? totalPrice - item.price : null);
     }
   };
 

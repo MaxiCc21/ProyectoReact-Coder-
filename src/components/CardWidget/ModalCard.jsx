@@ -4,7 +4,6 @@ import "./ModalCard.css";
 
 export const ModalCard = ({ methodCardWidget }) => {
   let { itemListCard, deleteItemToCard, totalPrice } = methodCardWidget;
-  console.log(totalPrice);
   return (
     // <section className="modal-section">
     <div id="modal-container">
