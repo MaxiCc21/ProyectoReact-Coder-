@@ -4,18 +4,26 @@ import "./App.css";
 import Footer from "./components/footer/Footer";
 import GaleriaApp from "./components/galeria/GaleriaApp";
 import NavBar from "./components/navbar/NavBar";
-import Index from "./page/Index";
+import Index from "./page/index/Index.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Page404 from "./page/404/page404";
 import CardModal from "./components/CardWidget/CardModal";
 import { useCard } from "./Hooks/useCard";
+
+import { ModalCard } from "./components/CardWidget/ModalCard";
 
 function App(props) {
   let methodCardWidget = useCard();
 
   return (
     <>
-      <CardModal methodCardWidget={methodCardWidget} />
+      {methodCardWidget.itemListCard !== [] ? (
+        <ModalCard methodCardWidget={methodCardWidget} />
+      ) : (
+        console.log("Nada")
+      )}
+
+      {/* <CardModal methodCardWidget={methodCardWidget} /> */}
       <BrowserRouter>
         <NavBar methodCardWidget={methodCardWidget} />
         <Routes>
