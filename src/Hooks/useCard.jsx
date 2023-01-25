@@ -10,7 +10,7 @@ export const useCard = (props) => {
     toast: true,
     position: "top-end",
     showConfirmButton: false,
-    timer: 1500,
+    timer: 1100,
     timerProgressBar: true,
     didOpen: (toast) => {
       toast.addEventListener("mouseenter", Swal.stopTimer);
@@ -32,14 +32,13 @@ export const useCard = (props) => {
 
   const setItemToCard = (item) => {
     setItemListCard([...itemListCard, item]);
-    console.log(item.price);
     setTotalPrice(totalPrice + item.price);
   };
 
   const deleteItemToCard = async (item) => {
     let isDelete = await sweetalert2();
-
-    if (!isDelete) {
+    console.log(isDelete);
+    if (isDelete === false) {
       Toast.fire({
         icon: "success",
         title: "Producto elminiado",
@@ -50,5 +49,10 @@ export const useCard = (props) => {
     }
   };
 
-  return { itemListCard, setItemToCard, deleteItemToCard, totalPrice };
+  return {
+    itemListCard,
+    setItemToCard,
+    deleteItemToCard,
+    totalPrice,
+  };
 };
