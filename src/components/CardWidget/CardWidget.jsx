@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const CardWidget = ({ totalItems }) => {
+const CardWidget = ({ totalItems, openModal }) => {
   return (
-    <a className="link-item shop-Widget" href="#nav">
+    <Link className="link-item shop-Widget" onClick={openModal}>
       Carrito <span>{totalItems}</span>
-    </a>
+    </Link>
   );
 };
 

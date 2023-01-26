@@ -3,7 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import CardWidget from "../CardWidget/CardWidget";
 import "./navbar.css";
 
-function NavBar({ methodCardWidget }) {
+function NavBar({ methodCardWidget, openModal }) {
   let { itemListCard } = methodCardWidget;
 
   return (
@@ -26,7 +26,7 @@ function NavBar({ methodCardWidget }) {
             Usuario
           </Link>
 
-          <CardWidget totalItems={itemListCard.length} />
+          <CardWidget totalItems={itemListCard.length} openModal={openModal} />
         </div>
       </nav>
       <button id="button-menu" className="button-menu">

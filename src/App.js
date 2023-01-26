@@ -11,21 +11,27 @@ import CardModal from "./components/CardWidget/CardModal";
 import { useCard } from "./Hooks/useCard";
 
 import { ModalCard } from "./components/CardWidget/ModalCard";
+import Modal from "./components/modal/Modal";
+import { useModal } from "./Hooks/useModal";
 
 function App(props) {
   let methodCardWidget = useCard();
+  const { isOpen, openModal, closeModal } = useModal(false);
 
   return (
     <>
-      {methodCardWidget.itemListCard !== [] ? (
-        <ModalCard methodCardWidget={methodCardWidget} />
-      ) : (
-        console.log("Nada")
-      )}
+      <Modal isOpen={isOpen} closeModal={closeModal}>
+        <ModalCard
+          methodCardWidget={methodCardWidget}
+          modalHeight="500px"
+          modalwidth="500px"
+          modaltitle="Carruto de compras"
+        />
+      </Modal>
 
       {/* <CardModal methodCardWidget={methodCardWidget} /> */}
       <BrowserRouter>
-        <NavBar methodCardWidget={methodCardWidget} />
+        <NavBar methodCardWidget={methodCardWidget} openModal={openModal} />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route

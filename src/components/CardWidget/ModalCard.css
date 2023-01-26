@@ -9,8 +9,6 @@
 
 #modal-container {
   background-color: rgb(255, 255, 255);
-  width: 500px;
-  height: 500px;
   border-radius: 15px;
   border: 0.5px solid rgb(199, 199, 199);
   padding: 10px;
@@ -27,8 +25,8 @@
 
 .modal-itemArea {
   background-color: rgb(210, 210, 210);
-  width: 90%;
-  height: 50%;
+  width: 95%;
+  height: 300px;
   padding: 10px;
   overflow-y: auto;
 }
