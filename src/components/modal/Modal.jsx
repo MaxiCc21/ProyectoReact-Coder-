@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Modal.css";
-
 const Modal = ({ children, isOpen, closeModal }) => {
   const handleModalContainerClick = (e) => e.stopPropagation();
 
