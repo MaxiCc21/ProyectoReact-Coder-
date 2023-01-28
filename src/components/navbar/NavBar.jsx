@@ -3,9 +3,9 @@ import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
 import CardWidget from "../CardWidget/CardWidget";
 import "./navbar.css";
 
-function NavBar({ methodCardWidget }) {
-  let { itemListCard, setItemToCard, deleteItemToCard } = methodCardWidget;
-
+function NavBar({ methodCardWidget, openModal }) {
+  let { itemListCard } = methodCardWidget;
+  // Ready
   return (
     <header id="nav" className="main-header">
       <Link className="main-logo" to="/">
@@ -26,7 +26,7 @@ function NavBar({ methodCardWidget }) {
             Usuario
           </NavLink>
 
-          <CardWidget totalItems={itemListCard.length} />
+          <CardWidget totalItems={itemListCard.length} openModal={openModal} />
         </div>
       </nav>
       <button id="button-menu" className="button-menu">
