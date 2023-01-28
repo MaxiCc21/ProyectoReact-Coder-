@@ -1,21 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({ el, methodCardWidget }) => {
   let { id, category, description, image, price, title } = el;
-  let { itemListCard, setItemToCard, deleteItemToCard } = methodCardWidget;
-
-  const createAndAppendNewItem = () => {
-    setItemToCard(el);
-  };
+  let { setItemToCard } = methodCardWidget;
 
   return (
     <div className="box">
-      <a href="#ss" onClick={createAndAppendNewItem}>
+      <Link
+        to="#"
+        onClick={() => {
+          setItemToCard(el, price);
+        }}
+      >
+        {" "}
         <img alt="Imagen" src={image} />
         <h1>{title}</h1>
         <h2>{category}</h2>
         <p>{price}</p>
-      </a>
+      </Link>
     </div>
   );
 };

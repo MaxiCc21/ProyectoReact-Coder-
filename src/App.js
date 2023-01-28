@@ -4,34 +4,34 @@ import "./App.css";
 import Footer from "./components/footer/Footer";
 import GaleriaApp from "./components/galeria/GaleriaApp";
 import NavBar from "./components/navbar/NavBar";
-import Index from "./page/Index";
+import Index from "./page/index/Index.jsx";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Page404 from "./page/404/page404";
+import CardModal from "./components/CardWidget/CardModal";
+import { useCard } from "./Hooks/useCard";
+
+import { ModalCard } from "./components/CardWidget/ModalCard";
+import Modal from "./components/modal/Modal";
+import { useModal } from "./Hooks/useModal";
 
 function App(props) {
-  const [itemListCard, setItemListCard] = useState([]);
-  useEffect(() => {
-    console.log("Movimiento en carrito");
-    console.log(itemListCard);
-  }, [itemListCard]);
-
-  const setItemToCard = (newItemData) => {
-    setItemListCard([...itemListCard, newItemData]);
-  };
-
-  const deleteItemToCard = () => {};
-
-  const methodCardWidget = {
-    itemListCard,
-    setItemToCard,
-    deleteItemToCard,
-  };
+  let methodCardWidget = useCard();
+  const { isOpen, openModal, closeModal } = useModal(false);
 
   return (
     <>
-      {/* <GaleriaApp methodCardWidget={methodCardWidget} /> */}
+      <Modal isOpen={isOpen} closeModal={closeModal}>
+        <ModalCard
+          methodCardWidget={methodCardWidget}
+          modalHeight="500px"
+          modalwidth="500px"
+          modaltitle="Carruto de compras"
+        />
+      </Modal>
+
+      {/* <CardModal methodCardWidget={methodCardWidget} /> */}
       <BrowserRouter>
-        <NavBar methodCardWidget={methodCardWidget} />
+        <NavBar methodCardWidget={methodCardWidget} openModal={openModal} />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route
