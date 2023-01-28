@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, NavLink, Route, Routes } from "react-router-dom";
 import CardWidget from "../CardWidget/CardWidget";
 import "./navbar.css";
 
@@ -13,18 +13,18 @@ function NavBar({ methodCardWidget, openModal }) {
       </Link>
       <nav className="main-nav">
         <div className="nav-links">
-          <Link className="link-item" to="/ropa">
+          <NavLink className="link-item" to="/ropa">
             Ropa
-          </Link>
-          <Link className="link-item" to="/ropa">
+          </NavLink>
+          <NavLink className="link-item" to="/joyas">
             Calzado
-          </Link>
-          <Link className="link-item" to="/ropa">
+          </NavLink>
+          <NavLink className="link-item" to="/ropa">
             Accesorios
-          </Link>
-          <Link className="link-item" to="/ropa">
+          </NavLink>
+          <NavLink className="link-item" to="/ropa">
             Usuario
-          </Link>
+          </NavLink>
 
           <CardWidget totalItems={itemListCard.length} openModal={openModal} />
         </div>
