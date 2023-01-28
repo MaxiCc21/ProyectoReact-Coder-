@@ -5,7 +5,7 @@ import "./navbar.css";
 
 function NavBar({ methodCardWidget, openModal }) {
   let { itemListCard } = methodCardWidget;
-
+  // Ready
   return (
     <header id="nav" className="main-header">
       <Link className="main-logo" to="/">
