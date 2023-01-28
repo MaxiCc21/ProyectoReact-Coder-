@@ -36,7 +36,21 @@ function App(props) {
           <Route path="/" element={<Index />} />
           <Route
             path="/ropa"
-            element={<GaleriaApp methodCardWidget={methodCardWidget} />}
+            element={
+              <GaleriaApp
+                methodCardWidget={methodCardWidget}
+                urlCategory="men's clothing"
+              />
+            }
+          />
+          <Route
+            path="/joyas"
+            element={
+              <GaleriaApp
+                methodCardWidget={methodCardWidget}
+                urlCategory="jewelery"
+              />
+            }
           />
           <Route path="*" element={<Page404 />} />
         </Routes>
