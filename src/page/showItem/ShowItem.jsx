@@ -12,7 +12,7 @@ import {
   import { useFetch } from "../../Hooks/useFetch";
  
   const ShowItem = ({methodCardWidget}) => {
-    const [quantity, setQuantity] = React.useState("");
+    const [quantity, setQuantity] = React.useState(1);
     let { setItemToCard } = methodCardWidget;
     let { itemId } = useParams();
     
@@ -74,7 +74,7 @@ import {
                   alignItems: "center",
                 }}
               >
-                <span>Precio: ${singleItem.price}</span>
+                <span>Precio: ${singleItem.price * quantity}</span>
               </div>
             </div>
             <div className="item-right-form-area">
@@ -95,7 +95,7 @@ import {
                   <MenuItem value={5}>5</MenuItem>
                 </Select>
               </FormControl>
-              <Button  variant="contained" sx={mySubmitButton}>
+              <Button onClick={() => { setItemToCard(singleItem) }} variant="contained" sx={mySubmitButton}>
                 Agregar al carrito
               </Button>
 

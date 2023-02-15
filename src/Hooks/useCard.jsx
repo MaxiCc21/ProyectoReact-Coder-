@@ -37,7 +37,6 @@ export const useCard = (props) => {
 
   const deleteItemToCard = async (item) => {
     let isDelete = await sweetalert2();
-    console.log(isDelete);
     if (isDelete === false) {
       Toast.fire({
         icon: "success",
