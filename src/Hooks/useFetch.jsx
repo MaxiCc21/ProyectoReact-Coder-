@@ -1,42 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
-export const useFetch = (urlCategory) => {
-  let [searchParams, setSearchParams] = useSearchParams();
+export const useFetch = () => {
 
-  const [category, setCategory] = useState(null);
-  const [priceFilter, setPriceFilter] = useState(null);
   const [db, setDb] = useState([]);
-  const [singleItem, setSingleItem] = useState();
+  const [singleItem, setSingleItem] = useState([]);
 
-  useEffect(() => {
-    setSearchParams({ category: urlCategory });
-    // handleURL(urlCategory);
-    getData(urlCategory);
-  }, []);
-
-  const handleURL = (urlCategory, id = false) => {
+  const handleURL = (urlCategory, id=false) => {
     if (!id) {
       let url = `https://fakestoreapi.com/products/category/${urlCategory}`;
       return {url,id}
     } else {
-      let url = `https://fakestoreapi.com/products/category/${urlCategory}/${id}`;
-      return url
+      let url = `https://fakestoreapi.com/products/${id}`;
+      return {url,id}
     }
   
   };
 
-  const getData = async (urlCategory,id) => {
-    let resURL = handleURL(urlCategory,id);
-    console.log(resURL);
+  const getAllData = async (urlCategory) => {
+    let resURL = handleURL(urlCategory);
     let res = await fetch(resURL.url);
     let json = await res.json();
     console.log(json);
     setDb(json);
   };
 
+  
+  const getSingleData = async (itemId) => {
+    let res = await fetch(`https://fakestoreapi.com/products/${itemId}`);
+    let json = await res.json();
+    setSingleItem(json);
+  };
+
   return {
-    getData,
+    getAllData,
+    getSingleData,
     db,
+    singleItem
   };
 };

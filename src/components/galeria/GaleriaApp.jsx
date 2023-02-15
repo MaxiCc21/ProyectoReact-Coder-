@@ -4,13 +4,17 @@ import Card from "./Card";
 import "./GaleriaApp.css";
 
 export default function GaleriaApp({ methodCardWidget, urlCategory,params  }) {
-  let { handleURL, getData, db } = useFetch(urlCategory);
+  let { getAllData, db } = useFetch();
 
   useEffect(() => {
-    
-    // console.log(db);
+    loader(urlCategory)
   }, []);
 
+  const loader = (category) => { 
+    let res = getAllData(category)
+   }
+  
+ 
 
   return (
     <div className="Galery-Container">

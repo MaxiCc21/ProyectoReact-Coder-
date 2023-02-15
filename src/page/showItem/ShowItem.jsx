@@ -13,16 +13,22 @@ import {
  
   const ShowItem = ({methodCardWidget}) => {
     const [quantity, setQuantity] = React.useState("");
-
     let { setItemToCard } = methodCardWidget;
-    let { itemId,itemCategory } = useParams();
- 
-    let {getData} = useFetch(itemCategory)
+    let { itemId } = useParams();
+    
+    let {getSingleData,singleItem} = useFetch()
 
-  
+    useEffect(() => {
+      loader(itemId)
+     }, []);
+   
+
+    const loader =  (itemId) => {
+      let item =  getSingleData(itemId)
+      return item
+    }
 
      
-   
 
     const handleChange = (event) => {
 
@@ -49,7 +55,7 @@ import {
             <img alt="img" src="https://dummyimage.com/200x200/000/fff" />
           </div>
           <div className="item-center-area">
-            <img alt="img" src="#"/> 
+            <img alt="img" src={singleItem.image}/> 
           </div>
           <div className="item-right-area">
             <div className="item-rigt-description-area">
@@ -58,7 +64,7 @@ import {
                   height: "70%",
                 }}
               >
-                <h1>Titulo</h1>
+                <h1>{singleItem.title}</h1>
                 <p>Descripcion del producto</p>
               </div>
               <div
@@ -68,7 +74,7 @@ import {
                   alignItems: "center",
                 }}
               >
-                <span>Precio: $5000</span>
+                <span>Precio: ${singleItem.price}</span>
               </div>
             </div>
             <div className="item-right-form-area">
