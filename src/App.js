@@ -13,6 +13,7 @@ import { useCard } from "./Hooks/useCard";
 import { ModalCard } from "./components/CardWidget/ModalCard";
 import Modal from "./components/modal/Modal";
 import { useModal } from "./Hooks/useModal";
+import ShowItem from "./page/showItem/ShowItem";
 
 function App(props) {
   let methodCardWidget = useCard();
@@ -51,6 +52,16 @@ function App(props) {
                 urlCategory="jewelery"
               />
             }
+          />
+
+          <Route 
+          path="/ropa/:itemCategory/:itemId" 
+          element={
+            <ShowItem 
+              methodCardWidget={methodCardWidget}
+            />
+          } 
+          
           />
           <Route path="*" element={<Page404 />} />
         </Routes>

@@ -1,19 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({ el, methodCardWidget }) => {
+const Card = ({ el }) => {
   let { id, category, description, image, price, title } = el;
-  let { setItemToCard } = methodCardWidget;
 
   return (
     <div className="box">
-      <Link
-        to="#"
-        onClick={() => {
-          setItemToCard(el, price);
-        }}
-      >
-        {" "}
+      <Link to={ `/ropa/${category}/${id}`} >
         <img alt="Imagen" src={image} />
         <h1>{title}</h1>
         <h2>{category}</h2>
