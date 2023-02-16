@@ -95,7 +95,7 @@ import {
                   <MenuItem value={5}>5</MenuItem>
                 </Select>
               </FormControl>
-              <Button onClick={() => { setItemToCard(singleItem) }} variant="contained" sx={mySubmitButton}>
+              <Button onClick={() => { setItemToCard(singleItem,quantity) }} variant="contained" sx={mySubmitButton}>
                 Agregar al carrito
               </Button>
 

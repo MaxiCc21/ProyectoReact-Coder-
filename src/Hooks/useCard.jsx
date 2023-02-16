@@ -30,9 +30,11 @@ export const useCard = (props) => {
     return res.value;
   };
 
-  const setItemToCard = (item) => {
-    setItemListCard([...itemListCard, item]);
-    setTotalPrice(totalPrice + item.price);
+  const setItemToCard = (item,q) => {
+    let newItem = {...item}
+    newItem.newPrice = (newItem.price * q)
+    setItemListCard([...itemListCard, newItem]);
+    // setTotalPrice(totalPrice + item.price);
   };
 
   const deleteItemToCard = async (item) => {
