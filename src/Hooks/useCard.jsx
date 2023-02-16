@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { redirect } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
@@ -33,8 +34,9 @@ export const useCard = (props) => {
   const setItemToCard = (item,q) => {
     let newItem = {...item}
     newItem.newPrice = (newItem.price * q)
+    newItem.q = q
     setItemListCard([...itemListCard, newItem]);
-    // setTotalPrice(totalPrice + item.price);
+    setTotalPrice(totalPrice + newItem.newPrice);
   };
 
   const deleteItemToCard = async (item) => {
@@ -46,9 +48,12 @@ export const useCard = (props) => {
       });
       let resDelete = itemListCard.filter((el) => el.id !== item.id);
       setItemListCard(resDelete);
-      setTotalPrice(totalPrice > 0 ? totalPrice - item.price : null);
+      setTotalPrice(totalPrice - item.price*item.q);
     }
   };
+
+
+
 
   return {
     itemListCard,
