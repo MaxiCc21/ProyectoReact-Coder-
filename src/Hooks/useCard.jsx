@@ -32,6 +32,7 @@ export const useCard = (props) => {
   };
 
   const setItemToCard = (item,q) => {
+    console.log(item);
     let newItem = {...item}
     newItem.newPrice = (newItem.price * q)
     newItem.q = q

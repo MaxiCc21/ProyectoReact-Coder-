@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 const ModalItem = ({ el: data, deleteItemToCard, setTotalPrice }) => {
-  console.log(data);
   return (
     <div className="modal-item">
       <img alt={data.title} src={data.image} />

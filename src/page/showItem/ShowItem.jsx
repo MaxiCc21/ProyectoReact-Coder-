@@ -65,7 +65,7 @@ import {
                 }}
               >
                 <h1>{singleItem.title}</h1>
-                <p>Descripcion del producto</p>
+                <p>{singleItem.description}</p>
               </div>
               <div
                 style={{
