@@ -1,6 +1,29 @@
 import React, { useState, useEffect } from "react";
+import { collection, doc,getDoc,getDocs,getFirestore } from "firebase/firestore";
+
 
 const Index = (props) => {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    const db = getFirestore()
+    const full = async (db) => { 
+      const itemsCollection = collection(db,"listaProducto")
+     const yyy = await getDocs(itemsCollection)
+     setProductos(yyy.docs.map((doc) => ({id:doc.id, ...doc.data()})))
+
+
+     console.log(productos);
+     }
+
+     full(db)
+
+
+    
+
+    
+  }, []);
+
   return (
     <section>
       <h1>Index</h1>
