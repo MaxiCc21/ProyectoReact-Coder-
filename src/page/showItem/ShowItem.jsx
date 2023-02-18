@@ -10,13 +10,17 @@ import {
   import { Form, useParams } from "react-router-dom";
   // import { useCardWidget } from "../../Hooks/useCardWidgeth";
   import { useFetch } from "../../Hooks/useFetch";
+
+  import { useFireBase } from "../../Hooks/useFireBase";
  
   const ShowItem = ({methodCardWidget}) => {
     const [quantity, setQuantity] = React.useState(1);
     let { setItemToCard } = methodCardWidget;
     let { itemId } = useParams();
     
-    let {getSingleData,singleItem} = useFetch()
+
+
+    let {singleItem,getSingleData } = useFireBase()
 
     useEffect(() => {
       loader(itemId)
@@ -25,9 +29,9 @@ import {
 
     const loader =  (itemId) => {
       let item =  getSingleData(itemId)
-      return item
     }
 
+      console.log(singleItem);
      
 
     const handleChange = (event) => {
@@ -45,7 +49,7 @@ import {
     };
   
     return (
-  
+
       <div className="section-ShowItem">
      
         <div className="item-section-ShowItem">
@@ -55,7 +59,7 @@ import {
             <img alt="img" src="https://dummyimage.com/200x200/000/fff" />
           </div>
           <div className="item-center-area">
-            <img alt="img" src={singleItem.image}/> 
+            <img alt="img" src={singleItem[0].image}/> 
           </div>
           <div className="item-right-area">
             <div className="item-rigt-description-area">
@@ -64,8 +68,8 @@ import {
                   height: "70%",
                 }}
               >
-                <h1>{singleItem.title}</h1>
-                <p>{singleItem.description}</p>
+                <h1>{singleItem[0].title}</h1>
+                <p>{singleItem[0].description}</p>
               </div>
               <div
                 style={{
@@ -74,7 +78,7 @@ import {
                   alignItems: "center",
                 }}
               >
-                <span>Precio: ${singleItem.price * quantity}</span>
+                <span>Precio: ${singleItem[0].price * quantity}</span>
               </div>
             </div>
             <div className="item-right-form-area">
@@ -95,7 +99,7 @@ import {
                   <MenuItem value={5}>5</MenuItem>
                 </Select>
               </FormControl>
-              <Button onClick={() => { setItemToCard(singleItem,quantity) }} variant="contained" sx={mySubmitButton}>
+              <Button onClick={() => { setItemToCard(singleItem[0],quantity) }} variant="contained" sx={mySubmitButton}>
                 Agregar al carrito
               </Button>
 

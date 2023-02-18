@@ -1,6 +1,45 @@
 import React, { useState, useEffect } from "react";
+import { collection, doc,getDoc,getDocs,getFirestore, query, where } from "firebase/firestore";
+import {db}  from "../../services/firebase";
+
 
 const Index = (props) => {
+  const [productos, setProductos] = useState([]);
+  console.log(productos);
+  useEffect(() => {
+    
+    // YO
+    // const full = async () => {
+    //   const db = getFirestore()
+    //   const itemsCollection = collection(db,"listaProducto")
+    //   const yyy = await getDocs(itemsCollection)
+    //   console.log(yyy);
+    //   setProductos(yyy.docs.map((doc) => ({id:doc.id, ...doc.data()})))
+    // }
+    // full()
+
+
+
+    // Maestro
+    // const db = getFirestore();
+
+    // const q = query(
+    //   collection(db,"listaProducto"),
+    //   where("category","==","men's clothing")
+    // );
+
+    // getDocs(q).then((snapshot) => { 
+    //   if (snapshot.size === 0) {
+    //     console.log("No results");
+    //   }
+    //   setProductos(snapshot.docs.map((doc) => ({ 
+    //     id: doc.id,
+    //     ...doc.data()
+    //    })))
+    //  })
+
+  }, []);
+
   return (
     <section>
       <h1>Index</h1>
