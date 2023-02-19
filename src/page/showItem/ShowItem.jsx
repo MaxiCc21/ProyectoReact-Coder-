@@ -17,22 +17,19 @@ import {
     const [quantity, setQuantity] = React.useState(1);
     let { setItemToCard } = methodCardWidget;
     let { itemId } = useParams();
-    
-
-
     let {singleItem,getSingleData } = useFireBase()
-
+      
     useEffect(() => {
       loader(itemId)
      }, []);
    
 
-    const loader =  (itemId) => {
-      let item =  getSingleData(itemId)
+  
+     const loader =  (itemId) => {
+      getSingleData(itemId)
+
     }
 
-      console.log(singleItem);
-     
 
     const handleChange = (event) => {
 
@@ -59,7 +56,7 @@ import {
             <img alt="img" src="https://dummyimage.com/200x200/000/fff" />
           </div>
           <div className="item-center-area">
-            <img alt="img" src={singleItem[0].image}/> 
+            <img alt="img" src={singleItem.image}/> 
           </div>
           <div className="item-right-area">
             <div className="item-rigt-description-area">
@@ -68,8 +65,8 @@ import {
                   height: "70%",
                 }}
               >
-                <h1>{singleItem[0].title}</h1>
-                <p>{singleItem[0].description}</p>
+                <h1>{singleItem.title}</h1>
+                <p>{singleItem.description}</p>
               </div>
               <div
                 style={{
@@ -78,7 +75,7 @@ import {
                   alignItems: "center",
                 }}
               >
-                <span>Precio: ${singleItem[0].price * quantity}</span>
+                <span>Precio: ${singleItem.price * quantity}</span>
               </div>
             </div>
             <div className="item-right-form-area">
@@ -99,7 +96,7 @@ import {
                   <MenuItem value={5}>5</MenuItem>
                 </Select>
               </FormControl>
-              <Button onClick={() => { setItemToCard(singleItem[0],quantity) }} variant="contained" sx={mySubmitButton}>
+              <Button onClick={() => { setItemToCard(singleItem,quantity) }} variant="contained" sx={mySubmitButton}>
                 Agregar al carrito
               </Button>
 
@@ -112,4 +109,3 @@ import {
   };
   
   export default ShowItem;
-  

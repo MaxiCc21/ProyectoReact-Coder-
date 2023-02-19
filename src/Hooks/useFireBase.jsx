@@ -20,16 +20,18 @@ export const useFireBase = () => {
        }
   
 
-       const getSingleData = async (id) => { 
+       const getSingleData = async (id) => {
         const queryRef = query(collection(db,"listaProducto"),
         where("id","==",Number(id)))
+      
         const response = await getDocs(queryRef)
-        setSingleItem(response.docs.map((doc) => (
+        const data = response.docs[0]
+        setSingleItem(
           {
-          id: doc.id,
-          ...doc.data()
+          id: data.id,
+          ...data.data()
          }
-         )))}
+         )}
   
 
        return {
