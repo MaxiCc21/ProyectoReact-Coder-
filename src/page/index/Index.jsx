@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { collection, doc,getDoc,getDocs,getFirestore, query, where } from "firebase/firestore";
+import {db}  from "../../services/firebase";
+
 
 const Index = (props) => {
-
   return (
-
     <section>
       <h1>Index</h1>
       <p>
