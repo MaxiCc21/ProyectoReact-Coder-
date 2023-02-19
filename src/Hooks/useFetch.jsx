@@ -21,7 +21,6 @@ export const useFetch = () => {
     let resURL = handleURL(urlCategory);
     let res = await fetch(resURL.url);
     let json = await res.json();
-    console.log(json);
     setDb(json);
   };
 

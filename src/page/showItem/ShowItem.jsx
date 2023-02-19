@@ -34,7 +34,6 @@ import {
     const handleChange = (event) => {
 
       setQuantity(event.target.value);
-      console.log(event.target.value);
     };
   
     const mySelectStyle = {
