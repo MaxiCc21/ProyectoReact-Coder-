@@ -11,7 +11,6 @@ export default function GaleriaApp({ methodCardWidget, urlCategory,params }) {
   let {listItem, getData} = useFireBase()
   const [loading, setLoading] = useState(false);
 
-
   useEffect(() => {
     loader(urlCategory, setLoading)
   }, []);
