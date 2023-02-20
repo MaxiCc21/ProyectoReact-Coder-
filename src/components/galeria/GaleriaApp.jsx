@@ -19,8 +19,6 @@ export default function GaleriaApp({ methodCardWidget, urlCategory,params }) {
     let RES = getData(category)
    }
   
- 
-
   return (
     <div className="Galery-Container">
       {listItem.map((el) => (
