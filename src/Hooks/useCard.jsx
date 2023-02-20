@@ -18,10 +18,10 @@ export const useCard = (props) => {
       toast.addEventListener("mouseleave", Swal.resumeTimer);
     },
   });
-  const sweetalert2 = async () => {
+  const sweetalert2 = async (titeText) => {
     const MySwal = withReactContent(Swal);
     const res = await MySwal.fire({
-      title: "Seguro que desea eliminar este producto?",
+      title: titeText,
       showConfirmButton: false,
       showDenyButton: true,
       showCancelButton: true,
@@ -40,7 +40,7 @@ export const useCard = (props) => {
   };
 
   const deleteItemToCard = async (item) => {
-    let isDelete = await sweetalert2();
+    let isDelete = await sweetalert2("Seguro que desea eliminar este producto?");
     if (isDelete === false) {
       Toast.fire({
         icon: "success",
@@ -52,6 +52,18 @@ export const useCard = (props) => {
     }
   };
 
+  const deleteAll = async () => {
+    let isDelete = await sweetalert2("Seguro que desea limpiar el Carrito");
+    if (isDelete === false) {
+      Toast.fire({
+        icon: "success",
+        title: "Carrito limpio",
+      });
+      setItemListCard([]);
+      setTotalPrice(0)
+    }
+
+   }
 
 
 
@@ -60,5 +72,6 @@ export const useCard = (props) => {
     setItemToCard,
     deleteItemToCard,
     totalPrice,
+    deleteAll,
   };
 };

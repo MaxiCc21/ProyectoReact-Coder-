@@ -4,7 +4,7 @@ import "./ModalCard.css";
 import Button from "@mui/material/Button";
 
 export const ModalCard = ({ methodCardWidget, modaltitle = null }) => {
-  let { itemListCard, deleteItemToCard, totalPrice } = methodCardWidget;
+  let { itemListCard, deleteItemToCard, totalPrice,deleteAll } = methodCardWidget;
 
   const myStyle_btn1 = {
     background: "rgb(84, 149, 234  )",
@@ -20,6 +20,7 @@ export const ModalCard = ({ methodCardWidget, modaltitle = null }) => {
     background: "rgb(228, 228, 228 )",
     color: "rgb(131, 131, 131 )",
     height: "34px",
+   
     fontSize: "13px",
     "&:hover": {
       background: "rgb(200, 200, 200)",
@@ -57,6 +58,9 @@ export const ModalCard = ({ methodCardWidget, modaltitle = null }) => {
             size="large"
             variant="filled"
             sx={myStyle_btn2}
+            onClick={() => { 
+              deleteAll()
+             }}
           >
             Limpiar Carrito
           </Button>
