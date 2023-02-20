@@ -74,7 +74,7 @@ import {
                   alignItems: "center",
                 }}
               >
-                <span>Precio: ${singleItem.price * quantity}</span>
+                <span>Precio: ${singleItem.price * quantity||" - - -"}</span>
               </div>
             </div>
             <div className="item-right-form-area">
