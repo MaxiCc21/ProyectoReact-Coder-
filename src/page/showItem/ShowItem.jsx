@@ -20,16 +20,11 @@ import {
       loader(itemId)
      }, []);
    
-
-  
      const loader =  (itemId) => {
       getSingleData(itemId)
-
     }
 
-
     const handleChange = (event) => {
-
       setQuantity(event.target.value);
     };
   
@@ -37,6 +32,7 @@ import {
       height: "50px",
       width: "111px",
     };
+    
     const mySubmitButton = {
       height: "50px",
     };
