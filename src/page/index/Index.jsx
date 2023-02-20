@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { collection, doc,getDoc,getDocs,getFirestore, query, where } from "firebase/firestore";
 import {db}  from "../../services/firebase";
+import Loader from "../../components/loader/Loader";
 
 
 const Index = (props) => {

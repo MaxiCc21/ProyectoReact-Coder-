@@ -3,14 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { db } from "../services/firebase";
 
 export const useFireBase = () => {
-    const [listItem, setListItem] = useState([]);
+    const [listItem, setListItem] = useState(null);
     const [singleItem, setSingleItem] = useState([]);
 
     const getData = async (category) => { 
         const queryRef = query(collection(db,"listaProducto"),
         where("category","==",`${category}`))
         const response = await getDocs(queryRef)
-        
         setListItem(response.docs.map((doc) => (
           { 
           id: doc.id,
