@@ -5,12 +5,9 @@ import {
     MenuItem,
     Select,
   } from "@mui/material";
-  import React, { useEffect, useState } from "react";
+  import React, { useEffect } from "react";
   import "./ShowItem.css";
-  import { Form, useParams } from "react-router-dom";
-  // import { useCardWidget } from "../../Hooks/useCardWidgeth";
-  import { useFetch } from "../../Hooks/useFetch";
-
+  import { useParams } from "react-router-dom";
   import { useFireBase } from "../../Hooks/useFireBase";
  
   const ShowItem = ({methodCardWidget}) => {
