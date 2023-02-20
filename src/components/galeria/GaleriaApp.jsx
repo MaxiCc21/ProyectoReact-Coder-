@@ -22,8 +22,6 @@ export default function GaleriaApp({ methodCardWidget, urlCategory,params }) {
     setLoading(false)
    }
   
- 
-
   return (
     <>
     {loading && <Loader/>}
